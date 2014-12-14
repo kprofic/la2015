@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,29 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRl-Vr-sSj">
-                                <rect key="frame" x="91" y="320" width="134" height="128"/>
-                                <state key="normal" title=" " image="love.png">
+                                <rect key="frame" x="99" y="320" width="134" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="Waf-Oj-J9E"/>
+                                    <constraint firstAttribute="height" constant="128" id="hVf-3P-ek2"/>
+                                </constraints>
+                                <state key="normal" title=" " backgroundImage="love.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="smileButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OT6-Qe-1yV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdt-1s-Kip">
-                                <rect key="frame" x="294" y="320" width="437" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="437" id="yme-7j-fY2"/>
-                                </constraints>
-                                <state key="normal" title=" " image="donno.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="donnoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tce-SN-HFA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYv-e3-2oM">
-                                <rect key="frame" x="809" y="320" width="134" height="128"/>
-                                <state key="normal" title=" " image="crying.png">
+                                <rect key="frame" x="791" y="320" width="134" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="KGC-6U-Xgm"/>
+                                    <constraint firstAttribute="height" constant="128" id="rWo-NK-0vu"/>
+                                </constraints>
+                                <state key="normal" title=" " backgroundImage="crying.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -55,24 +50,43 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdt-1s-Kip">
+                                <rect key="frame" x="445" y="320" width="134" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="V8z-LI-aTR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="134" id="rXi-zy-Jmz"/>
+                                </constraints>
+                                <state key="normal" title=" " backgroundImage="donno.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="donnoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tce-SN-HFA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="top" secondItem="rRl-Vr-sSj" secondAttribute="top" id="13b-MP-zCl"/>
-                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="firstBaseline" secondItem="rRl-Vr-sSj" secondAttribute="baseline" id="IHK-Hu-hZo"/>
-                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="baseline" secondItem="rRl-Vr-sSj" secondAttribute="firstBaseline" id="PoH-C0-mud"/>
-                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="baseline" secondItem="YYv-e3-2oM" secondAttribute="firstBaseline" id="XsM-0k-3HZ"/>
-                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YUr-Yd-JZk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YYv-e3-2oM" secondAttribute="trailing" constant="65" id="ab8-U5-tWH"/>
-                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="300" id="b75-Qg-Sxt"/>
-                            <constraint firstItem="rRl-Vr-sSj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="75" id="dpy-xh-P6M"/>
+                            <constraint firstAttribute="centerY" secondItem="Vdt-1s-Kip" secondAttribute="centerY" id="Mt0-z1-aP7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YYv-e3-2oM" secondAttribute="centerX" constant="150" id="ab8-U5-tWH"/>
+                            <constraint firstAttribute="centerY" secondItem="YYv-e3-2oM" secondAttribute="centerY" id="bDk-ko-qVf"/>
+                            <constraint firstItem="rRl-Vr-sSj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="150" id="dpy-xh-P6M"/>
                             <constraint firstItem="Vdt-1s-Kip" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k6t-ad-jkR"/>
-                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="baseline" secondItem="YYv-e3-2oM" secondAttribute="baseline" id="ohz-5d-1ac"/>
-                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="top" secondItem="YYv-e3-2oM" secondAttribute="top" id="xWH-Zz-TFI"/>
+                            <constraint firstAttribute="centerY" secondItem="rRl-Vr-sSj" secondAttribute="centerY" id="u9n-m3-XB2"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="hateButton" destination="YYv-e3-2oM" id="a0c-A9-CJg"/>
+                        <outlet property="hateHeightConstraint" destination="rWo-NK-0vu" id="N2I-Gq-eme"/>
+                        <outlet property="hateWidthConstraint" destination="KGC-6U-Xgm" id="sLg-Qs-xTS"/>
+                        <outlet property="likeHeightConstraint" destination="hVf-3P-ek2" id="RuX-ZF-1aS"/>
+                        <outlet property="likeWidthConstraint" destination="Waf-Oj-J9E" id="LEX-ez-uuW"/>
+                        <outlet property="loveButton" destination="rRl-Vr-sSj" id="zMI-oC-SXa"/>
+                        <outlet property="neutralButton" destination="Vdt-1s-Kip" id="XJX-01-nn7"/>
+                        <outlet property="neutralHeightConstraint" destination="V8z-LI-aTR" id="XJv-ym-Dof"/>
+                        <outlet property="neutralWidthConstraint" destination="rXi-zy-Jmz" id="kRV-nv-FT0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
