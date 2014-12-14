@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF80005F1A3E4CE9001FB2F1 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = AF80005E1A3E4CE9001FB2F1 /* XYPieChart.m */; };
 		AFCC56531A3E17AB00400DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC56521A3E17AB00400DCA /* AppDelegate.swift */; };
 		AFCC56551A3E17AB00400DCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC56541A3E17AB00400DCA /* ViewController.swift */; };
 		AFCC56581A3E17AB00400DCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCC56561A3E17AB00400DCA /* Main.storyboard */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF80005C1A3E4CE8001FB2F1 /* Voter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voter-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF80005D1A3E4CE9001FB2F1 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		AF80005E1A3E4CE9001FB2F1 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
 		AFCC564D1A3E17AB00400DCA /* Voter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCC56511A3E17AB00400DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCC56521A3E17AB00400DCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,10 +78,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF8000571A3E4C9D001FB2F1 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				AF8000581A3E4C9D001FB2F1 /* XYPieChart */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		AF8000581A3E4C9D001FB2F1 /* XYPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				AF80005D1A3E4CE9001FB2F1 /* XYPieChart.h */,
+				AF80005E1A3E4CE9001FB2F1 /* XYPieChart.m */,
+				AF80005C1A3E4CE8001FB2F1 /* Voter-Bridging-Header.h */,
+			);
+			path = XYPieChart;
+			sourceTree = "<group>";
+		};
 		AFCC56441A3E17AB00400DCA = {
 			isa = PBXGroup;
 			children = (
 				AFCC564F1A3E17AB00400DCA /* Voter */,
+				AF8000571A3E4C9D001FB2F1 /* External */,
 				AFCC56721A3E1AE300400DCA /* Resources */,
 				AFCC56651A3E17AB00400DCA /* VoterTests */,
 				AFCC564E1A3E17AB00400DCA /* Products */,
@@ -266,6 +289,7 @@
 				AFCC56551A3E17AB00400DCA /* ViewController.swift in Sources */,
 				AFD1A6551A3E25C200F5699C /* VoteManager.swift in Sources */,
 				AFCC56531A3E17AB00400DCA /* AppDelegate.swift in Sources */,
+				AF80005F1A3E4CE9001FB2F1 /* XYPieChart.m in Sources */,
 				AFD1A6571A3E2A9400F5699C /* Vote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,9 +415,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Voter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "External/XYPieChart/Voter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -401,9 +428,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Voter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "External/XYPieChart/Voter-Bridging-Header.h";
 			};
 			name = Release;
 		};

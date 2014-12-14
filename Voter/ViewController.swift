@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, XYPieChartDataSource {
     lazy var vm: VoteManager = {
        return VoteManager.sharedInstance
     }()
+    @IBOutlet weak var pieChart: XYPieChart!
     @IBOutlet weak var loveButton: UIButton!
     @IBOutlet weak var neutralButton: UIButton!
     @IBOutlet weak var hateButton: UIButton!
@@ -22,20 +23,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var neutralHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var hateWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var hateHeightConstraint: NSLayoutConstraint!
+    
+    // Life cycle
+    override func viewDidLoad() {
+        self.pieChart.reloadData()
+    }
+    
     // Actions
     @IBAction func smileButtonPressed(sender: UIButton) {
         self.vm.makeVote(Vote.Like)
         self.animateButton(sender)
+        self.pieChart.reloadData();
     }
     
     @IBAction func donnoPressed(sender: UIButton) {
         self.vm.makeVote(Vote.Neutral)
         self.animateButton(sender)
+        self.pieChart.reloadData();
     }
     
     @IBAction func cryingPressed(sender: UIButton) {
         self.vm.makeVote(Vote.Hate)
         self.animateButton(sender)
+        self.pieChart.reloadData();
     }
     
     // Animation
@@ -80,6 +90,37 @@ class ViewController: UIViewController {
                 btn.layoutIfNeeded()
             })
         })
+    }
+    
+    // Pie Chart
+    func numberOfSlicesInPieChart(pieChart: XYPieChart!) -> UInt {
+        return 3
+    }
+    
+    func pieChart(pieChart: XYPieChart!, valueForSliceAtIndex index: UInt) -> CGFloat {
+        switch (index) {
+        case 0:
+            return CGFloat(self.vm.likes().count)
+        case 1:
+            return CGFloat(self.vm.neutrals().count)
+        case 2:
+            return CGFloat(self.vm.hates().count)
+        default:
+            return 0
+        }
+    }
+    
+    func pieChart(pieChart: XYPieChart!, colorForSliceAtIndex index: UInt) -> UIColor! {
+        switch (index) {
+        case 0:
+            return UIColor.greenColor().colorWithAlphaComponent(0.6)
+        case 1:
+            return UIColor.blueColor().colorWithAlphaComponent(0.6)
+        case 2:
+            return UIColor.redColor().colorWithAlphaComponent(0.6)
+        default:
+            return nil
+        }
     }
 }
 
