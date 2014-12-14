@@ -20,6 +20,8 @@
 		AFCC56811A3E1AFD00400DCA /* crying.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCC56791A3E1AFD00400DCA /* crying.png */; };
 		AFCC56821A3E1AFD00400DCA /* sad2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCC567A1A3E1AFD00400DCA /* sad2.png */; };
 		AFCC56831A3E1AFD00400DCA /* donno.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCC567B1A3E1AFD00400DCA /* donno.png */; };
+		AFD1A6551A3E25C200F5699C /* VoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD1A6541A3E25C200F5699C /* VoteManager.swift */; };
+		AFD1A6571A3E2A9400F5699C /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD1A6561A3E2A9400F5699C /* Vote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		AFCC56791A3E1AFD00400DCA /* crying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crying.png; sourceTree = "<group>"; };
 		AFCC567A1A3E1AFD00400DCA /* sad2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad2.png; sourceTree = "<group>"; };
 		AFCC567B1A3E1AFD00400DCA /* donno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donno.png; sourceTree = "<group>"; };
+		AFD1A6541A3E25C200F5699C /* VoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteManager.swift; sourceTree = "<group>"; };
+		AFD1A6561A3E2A9400F5699C /* Vote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				AFCC56591A3E17AB00400DCA /* Images.xcassets */,
 				AFCC565B1A3E17AB00400DCA /* LaunchScreen.xib */,
 				AFCC56501A3E17AB00400DCA /* Supporting Files */,
+				AFD1A6541A3E25C200F5699C /* VoteManager.swift */,
+				AFD1A6561A3E2A9400F5699C /* Vote.swift */,
 			);
 			path = Voter;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCC56551A3E17AB00400DCA /* ViewController.swift in Sources */,
+				AFD1A6551A3E25C200F5699C /* VoteManager.swift in Sources */,
 				AFCC56531A3E17AB00400DCA /* AppDelegate.swift in Sources */,
+				AFD1A6571A3E2A9400F5699C /* Vote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +460,7 @@
 				AFCC566E1A3E17AB00400DCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFCC566F1A3E17AB00400DCA /* Build configuration list for PBXNativeTarget "VoterTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +469,7 @@
 				AFCC56711A3E17AB00400DCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

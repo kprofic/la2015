@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,15 +22,15 @@ class ViewController: UIViewController {
 
 
     @IBAction func smileButtonPressed(sender: UIButton) {
-        
+        VoteManager.sharedInstance.makeVote(Vote.Like)
     }
     
     @IBAction func donnoPressed(sender: UIButton) {
-        
+        VoteManager.sharedInstance.makeVote(Vote.Neutral)
     }
     
     @IBAction func cryingPressed(sender: UIButton) {
-        
+        VoteManager.sharedInstance.makeVote(Vote.Hate)
     }
 }
 
