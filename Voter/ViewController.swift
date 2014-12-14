@@ -8,10 +8,6 @@
 
 import UIKit
 
-func doubleFrame(frame: CGRect) -> CGRect {
-    return CGRectMake(frame.origin.x - frame.size.width, frame.origin.y - frame.size.height, frame.size.width*2, frame.size.height*2)
-}
-
 class ViewController: UIViewController {
     lazy var vm: VoteManager = {
        return VoteManager.sharedInstance
