@@ -1,25 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Voter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRl-Vr-sSj">
+                                <rect key="frame" x="91" y="320" width="134" height="128"/>
+                                <state key="normal" title=" " image="love.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="smileButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OT6-Qe-1yV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdt-1s-Kip">
+                                <rect key="frame" x="294" y="320" width="437" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="437" id="yme-7j-fY2"/>
+                                </constraints>
+                                <state key="normal" title=" " image="donno.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="donnoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tce-SN-HFA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYv-e3-2oM">
+                                <rect key="frame" x="809" y="320" width="134" height="128"/>
+                                <state key="normal" title=" " image="crying.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cryingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iRK-A7-mCB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lecture name..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry7-u9-Th1">
+                                <rect key="frame" x="171" y="111" width="682" height="71"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="top" secondItem="rRl-Vr-sSj" secondAttribute="top" id="13b-MP-zCl"/>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="firstBaseline" secondItem="rRl-Vr-sSj" secondAttribute="baseline" id="IHK-Hu-hZo"/>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="baseline" secondItem="rRl-Vr-sSj" secondAttribute="firstBaseline" id="PoH-C0-mud"/>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="baseline" secondItem="YYv-e3-2oM" secondAttribute="firstBaseline" id="XsM-0k-3HZ"/>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YUr-Yd-JZk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YYv-e3-2oM" secondAttribute="trailing" constant="65" id="ab8-U5-tWH"/>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="300" id="b75-Qg-Sxt"/>
+                            <constraint firstItem="rRl-Vr-sSj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="75" id="dpy-xh-P6M"/>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k6t-ad-jkR"/>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="baseline" secondItem="YYv-e3-2oM" secondAttribute="baseline" id="ohz-5d-1ac"/>
+                            <constraint firstItem="Vdt-1s-Kip" firstAttribute="top" secondItem="YYv-e3-2oM" secondAttribute="top" id="xWH-Zz-TFI"/>
+                        </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="crying.png" width="128" height="128"/>
+        <image name="donno.png" width="128" height="128"/>
+        <image name="love.png" width="128" height="128"/>
+    </resources>
 </document>

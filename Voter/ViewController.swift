@@ -21,5 +21,16 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func smileButtonPressed(sender: UIButton) {
+        
+    }
+    
+    @IBAction func donnoPressed(sender: UIButton) {
+        
+    }
+    
+    @IBAction func cryingPressed(sender: UIButton) {
+        
+    }
 }
 
