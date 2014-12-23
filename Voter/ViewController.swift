@@ -81,10 +81,12 @@ class ViewController: UIViewController, XYPieChartDataSource {
         UIView.animateWithDuration(0.2, animations: {
             width.constant*=2;
             height.constant*=2;
+//            btn.transform = CGAffineTransformMakeScale(2, 2)  // simpler way, without constraits
             btn.layoutIfNeeded()
         }, completion: { _ in
             
             UIView.animateWithDuration(0.5, animations: {
+//                btn.transform = CGAffineTransformIdentity // simpler way, without constraits
                 width.constant/=2;
                 height.constant/=2;
                 btn.layoutIfNeeded()
