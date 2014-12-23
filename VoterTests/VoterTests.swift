@@ -9,28 +9,34 @@
 import UIKit
 import XCTest
 
+func plusIsCommutative(x: Int, y: Int) -> Bool {
+    return x + y == y + x
+}
+
+func CheckAssert<X: Arbitrary>(prop: X -> Bool, desc: String) {
+    XCTAssert(check(desc, prop), desc)
+}
+
+func CheckAssert<X: Arbitrary, Y: Arbitrary>(prop: (X, Y) -> Bool, desc: String) {
+    XCTAssert(check(desc, prop), desc)
+}
+
 class VoterTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
+
     func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+        
+        // checking inline lambda
+        CheckAssert({ $0 + $1 == $1 + $0 }, "Plus should be commutative 1")
+        
+        // extended inline lambda
+        CheckAssert({(x: Int, y: Int) in
+            x + y == y + x
+        }, "Plus should be commutative 2")
+        
+        CheckAssert(plusIsCommutative, "Plus should be commutative 3")
     }
     
 }
+
+
+
