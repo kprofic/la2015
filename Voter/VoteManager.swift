@@ -29,40 +29,34 @@ class VoteManager: NSObject {
     }
 
 
-    // TODOs
-//    class Statictics {
-    
-        func likes() -> Array<Vote> {
-            return self.votes.filter {
-                $0 == Vote.Like
-            }
+    func likes() -> Array<Vote> {
+        return self.votes.filter {
+            $0 == Vote.Like
         }
+    }
+    
+    func neutrals() -> Array<Vote> {
+        return self.votes.filter {
+            $0 == Vote.Neutral
+        }
+    }
+    
+    func hates() -> Array<Vote> {
+        return self.votes.filter {
+            $0 == Vote.Hate
+        }
+    }
+    
+    var median: Vote {
+        var grouppedVotes  = [self.likes(), self.hates(), self.neutrals()]
+        grouppedVotes.sort({ $0.count < $1.count })
         
-        
-        func neutrals() -> Array<Vote> {
-            return self.votes.filter {
-                $0 == Vote.Neutral
-            }
+        if let median = grouppedVotes.last!.last {
+            return median
+        } else {
+            return Vote.None
         }
-        
-        func hates() -> Array<Vote> {
-            return self.votes.filter {
-                $0 == Vote.Hate
-            }
-        }
+    }
     
-    
-//        var average: Vote {
-//        }
-    
-        var median: Vote {
-            var grouppedVotes  = [self.likes(), self.hates(), self.neutrals()]
-            grouppedVotes.sort({ $0.count < $1.count })
-            
-            if let median = grouppedVotes.last!.last {
-                return median
-            } else {
-                return Vote.None
-            }
-        }
+    // average
 }

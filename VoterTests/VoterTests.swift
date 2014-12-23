@@ -13,29 +13,59 @@ func plusIsCommutative(x: Int, y: Int) -> Bool {
     return x + y == y + x
 }
 
-func CheckAssert<X: Arbitrary>(prop: X -> Bool, desc: String) {
+// Check calls check withing assertion clausure
+func Check<X: Arbitrary>(prop: X -> Bool, desc: String) {
     XCTAssert(check(desc, prop), desc)
 }
 
-func CheckAssert<X: Arbitrary, Y: Arbitrary>(prop: (X, Y) -> Bool, desc: String) {
+func Check<X: Arbitrary, Y: Arbitrary>(prop: (X, Y) -> Bool, desc: String) {
     XCTAssert(check(desc, prop), desc)
+}
+
+func Check<X: Arbitrary>(prop: [X] -> Bool, desc: String) {
+    XCTAssert(check(desc, prop), desc)
+}
+
+extension Vote: Arbitrary {
+    func smaller() -> Vote? {
+        return nil
+    }
+    
+    static func arbitrary() -> Vote {
+        switch (arc4random() % 3) {
+        case 0 :
+            return Vote.Like
+        default :
+            return Vote.Neutral
+        }
+    }
+}
+
+func voteManagerAccumulatesVotes(votes: [Vote]) -> Bool {
+    let vm = VoteManager()
+    
+    for v in votes {
+        vm.makeVote(v)
+    }
+
+    return arrayIsEqualToArray(vm.votes, votes)
 }
 
 class VoterTests: XCTestCase {
 
-    func testExample() {
-        
-        // checking inline lambda
-        CheckAssert({ $0 + $1 == $1 + $0 }, "Plus should be commutative 1")
-        
+    func testMath() {
         // extended inline lambda
-        CheckAssert({(x: Int, y: Int) in
+        Check({(x: Int, y: Int) in
             x + y == y + x
-        }, "Plus should be commutative 2")
+        }, "Plus should be commutative 1")
         
-        CheckAssert(plusIsCommutative, "Plus should be commutative 3")
+        // pass function
+        Check(plusIsCommutative, "Plus should be commutative 2")
     }
     
+    func testVoteManager() {
+        Check(voteManagerAccumulatesVotes, "VoteManager should accumulate votes")
+    }
 }
 
 

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		AF76CF321A49BCF600287DC1 /* QuickCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF76CF311A49BCF600287DC1 /* QuickCheck.swift */; };
 		AF76CF331A49BD7A00287DC1 /* QuickCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF76CF311A49BCF600287DC1 /* QuickCheck.swift */; };
+		AF76CF361A49CF2600287DC1 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD1A6561A3E2A9400F5699C /* Vote.swift */; };
+		AF76CF371A49CF2900287DC1 /* VoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD1A6541A3E25C200F5699C /* VoteManager.swift */; };
+		AF76CF391A49F1B700287DC1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF76CF381A49F1B700287DC1 /* Helpers.swift */; };
+		AF76CF3A1A49F1C400287DC1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF76CF381A49F1B700287DC1 /* Helpers.swift */; };
 		AF80005F1A3E4CE9001FB2F1 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = AF80005E1A3E4CE9001FB2F1 /* XYPieChart.m */; };
 		AFCC56531A3E17AB00400DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC56521A3E17AB00400DCA /* AppDelegate.swift */; };
 		AFCC56551A3E17AB00400DCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC56541A3E17AB00400DCA /* ViewController.swift */; };
@@ -39,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		AF76CF311A49BCF600287DC1 /* QuickCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickCheck.swift; sourceTree = "<group>"; };
+		AF76CF381A49F1B700287DC1 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		AF80005C1A3E4CE8001FB2F1 /* Voter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voter-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF80005D1A3E4CE9001FB2F1 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		AF80005E1A3E4CE9001FB2F1 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
@@ -86,6 +91,7 @@
 			children = (
 				AF8000581A3E4C9D001FB2F1 /* XYPieChart */,
 				AF76CF311A49BCF600287DC1 /* QuickCheck.swift */,
+				AF76CF381A49F1B700287DC1 /* Helpers.swift */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF76CF321A49BCF600287DC1 /* QuickCheck.swift in Sources */,
+				AF76CF391A49F1B700287DC1 /* Helpers.swift in Sources */,
 				AFCC56551A3E17AB00400DCA /* ViewController.swift in Sources */,
 				AFD1A6551A3E25C200F5699C /* VoteManager.swift in Sources */,
 				AFCC56531A3E17AB00400DCA /* AppDelegate.swift in Sources */,
@@ -304,6 +311,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF76CF331A49BD7A00287DC1 /* QuickCheck.swift in Sources */,
+				AF76CF371A49CF2900287DC1 /* VoteManager.swift in Sources */,
+				AF76CF361A49CF2600287DC1 /* Vote.swift in Sources */,
+				AF76CF3A1A49F1C400287DC1 /* Helpers.swift in Sources */,
 				AFCC56691A3E17AB00400DCA /* VoterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

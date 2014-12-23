@@ -26,6 +26,14 @@ func iterateWhile<A>(condition: A -> Bool,
         return initialValue
 }
 
+func tabulate<A>(times: Int, f: Int -> A) -> [A] {
+    return Array(0..<times).map(f)
+}
+
+func random(#from: Int, #to: Int) -> Int {
+    return from + (Int(arc4random()) % (to-from))
+}
+
 protocol Smaller {
     func smaller() -> Self?
 }
@@ -75,6 +83,17 @@ func check<X: Arbitrary, Y: Arbitrary>(message: String, prop: (X, Y) -> Bool) ->
     return checkHelper(instance, prop, message)
 }
 
+func arbitraryArray<X: Arbitrary>() -> [X] {
+    let randomLength = Int(arc4random() % 50)
+    let arr: [X] = tabulate(randomLength) { _ in return X.arbitrary() }
+    return arr
+}
+
+func check<X: Arbitrary>(message: String, prop: [X] -> Bool) -> (Bool) {
+    let instance = ArbitraryI(arbitrary: arbitraryArray, smaller: { (x: [X]) in x.smaller() })
+    return checkHelper(instance, prop, message)
+}
+
 extension Int: Smaller {
     func smaller() -> Int? {
         return self == 0 ? nil : self / 2
@@ -85,10 +104,38 @@ extension Int: Arbitrary {
         return Int(arc4random())
     }
 }
+
+extension Character: Arbitrary {
+    static func arbitrary() -> Character {
+        return Character(UnicodeScalar(random(from: 65, to: 90)))
+    }
+    
+    func smaller() -> Character? { return nil }
+}
+
 extension String: Smaller {
     func smaller() -> String? {
         return self.isEmpty ? nil
             : dropFirst(self)
+    }
+}
+
+extension String: Arbitrary {
+    static func arbitrary() -> String {
+        let randomLength = random(from: 0, to: 40)
+        let randomCharacters = tabulate(randomLength) { _ in
+            Character.arbitrary()
+        }
+        return reduce(randomCharacters, "") { $0 + String($1) }
+    }
+}
+
+extension Array: Smaller {
+    func smaller() -> [T]? {
+        if !self.isEmpty {
+            return Array(dropFirst(self))
+        }
+        return nil
     }
 }
 
